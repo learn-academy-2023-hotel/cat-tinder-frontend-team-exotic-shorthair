@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-import Header from "../components/Header"
+import NotFound from "../pages/NotFound"
 
-describe("<Header />", () => {
+describe("<NotFound />", () => {
   it('does not crash when rendering', () => {
     render(
       <BrowserRouter>
-      <Header />
+      <NotFound />
       </BrowserRouter>  
     )
   })

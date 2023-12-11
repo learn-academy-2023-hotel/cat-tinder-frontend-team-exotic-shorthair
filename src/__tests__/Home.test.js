@@ -1,13 +1,22 @@
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-import Header from "../components/Header"
+import Home from "../pages/Home"
 
-describe("<Header />", () => {
+describe("<Home />", () => {
   it('does not crash when rendering', () => {
     render(
       <BrowserRouter>
-      <Header />
+      <Home />
       </BrowserRouter>  
     )
   })
+
+  it('checks for the first img tag and all of its props', () => {
+    render(
+
+    )
+  })
 })
+
+
+
