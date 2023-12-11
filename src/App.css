@@ -1,38 +1,52 @@
-.App {
+/* .header{
+  font-size: 50px;
+} */
+
+.header {
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(66, 61, 61);
+  padding: 20px;
+  margin: 10px;
   text-align: center;
+  max-width: 250px;
+  display: inline-block;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer {
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(66, 61, 61);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: 250px;
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.notfound {
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(66, 61, 61);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: 250px;
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card .card-image{
+  max-width: 60%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.card .card-title{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: hsl(0, 0%, 21%);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card .card-text{
+  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(167, 100%, 31%)0000
 }
