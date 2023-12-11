@@ -10,12 +10,6 @@ describe("<Home />", () => {
       </BrowserRouter>  
     )
   })
-
-  it('checks for the first img tag and all of its props', () => {
-    render(
-
-    )
-  })
 })
 
 
