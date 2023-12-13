@@ -1,28 +1,33 @@
 import { render, screen } from "@testing-library/react"
-import { MemoryRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 
-import mockCats from "../mockCats"
-import CatShow from "../pages/CatShow"
+import CatNew from "../pages/CatNew"
 
-const renderShow = () => {
-  render(
-    <MemoryRouter initialEntries={["/catshow/1"]}>
-      <Routes>
-        <Route path="/catshow/:id" element={<CatShow cats={mockCats} />} />
-      </Routes>
-    </MemoryRouter>
-  )
-}
+describe("<CatNew />", () => {
+  const renderNew = () => {
+    render(
+      <BrowserRouter>
+        <CatNew />
+      </BrowserRouter>
+    )
+  }
+  it("renders a new cat form", () => {
+    renderNew()
 
-describe("<CatShow />", () => {
-  it("renders without crashing", () => {
-    renderShow()
+    const nameInput = screen.getByRole("textbox", {
+      name: /name/i,
+    })
+    expect(nameInput).toBeInTheDocument()
+
+    const enjoysInput = screen.getByRole("textbox", {
+      name: /enjoys/i,
+    })
+    expect(enjoysInput).toBeInTheDocument()
   })
 
-//   it("renders a card with what cat enjoys", () => {
-//     renderShow()
-//     expect(
-//       screen.getByText(mockCats[0].enjoys, { exact: false })
-//     ).toBeInTheDocument()
-//   })
+  it("has a form with entries for name, age, enjoys, image", () => {
+    renderNew()
+    const formName = screen.getByText(/name/i)
+    expect(formName.getAttribute("For")).toEqual("name")
+  })
 })
