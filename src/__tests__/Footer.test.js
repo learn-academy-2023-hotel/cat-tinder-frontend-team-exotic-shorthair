@@ -10,4 +10,6 @@ describe("<Footer />", () => {
       </BrowserRouter>  
     )
   })
+  // const footer = screen.getByText(/joseph/i)
+  // expect(footer).toBeInTheDocument()
 })

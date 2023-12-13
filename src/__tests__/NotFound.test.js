@@ -9,5 +9,7 @@ describe("<NotFound />", () => {
       <NotFound />
       </BrowserRouter>  
     )
-  })
+    const notFoundElement = screen.getByText(/not/i)
+    expect(notFoundElement).toBeInTheDocument()
+  });
 })
