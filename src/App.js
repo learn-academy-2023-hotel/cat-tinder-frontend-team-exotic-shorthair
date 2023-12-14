@@ -1,9 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
-
+import mockCats from "./mockCats"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-import mockCats from "./mockCats"
 import CatEdit from "./pages/CatEdit"
 import CatIndex from "./pages/CatIndex"
 import CatNew from "./pages/CatNew"
@@ -14,15 +13,40 @@ import NotFound from "./pages/NotFound"
 import "./App.css"
 
 const App = () => {
-  const [cats, setCats] = useState(mockCats)
+  const [cats, setCats] = useState([])
 
-  const createCat = (createdCat) => {
-    console.log("created cat:", createdCat)
+  useEffect(() => {readCats()}, [])
+
+  const readCats = () => {
+    fetch("http://localhost:3000/cats")
+    .then((response) =>response.json())
+    .then((payload) => {setCats(payload)})
+    .catch((error) => console.log('Cat read errors: ', error))
   }
 
-  const updateCat = (cat, id) => {
-    console.log("update: ", cat)
-
+  const createCat = (createCat) => {
+   fetch("http://localhost:3000/cats", {
+    body: JSON.stringify(createCat),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "POST",
+    })
+   .then((response) => response.json())
+   .then(() => readCats())
+   .catch((error) => console.log('Cat create errors: ', error))
+  }
+  const updateCat = (currentCat, id) => {
+    fetch(`http://localhost:3000/cats${id}`, {
+      body: JSON.stringify(currentCat),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH"
+    })
+    .then((response) => response.json())
+    .then(() => readCats())
+    .catch((error) => console.log("Update cat errors: ", error))
   }
 
   return (
@@ -30,7 +54,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catedit" element={<CatEdit />} />
+        <Route path="/catedit/:id" element={<CatEdit cats={cats} updateCat={updateCat} />} />
         <Route path="/catindex" element={<CatIndex cats={cats}/>} />
         <Route path="/catnew" element={<CatNew createCat={createCat}/>} />
         <Route path="/catshow/:id" element={<CatShow cats={cats} />} />
@@ -40,5 +64,6 @@ const App = () => {
     </> 
   )
 }
+
 
 export default App
