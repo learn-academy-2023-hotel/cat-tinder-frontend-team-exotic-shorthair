@@ -12,18 +12,18 @@ const handleClickDelete = () => {
     return (
       <>
       {currentCat && (
-        <>
-        <img alt={`${currentCat.name}'s profile`} src={currentCat.image} />
-        <h3>[currentCat.enjoys]</h3>
+        <div className="cats-profile">
+        <img className="imgshow-css" alt={`${currentCat.name}'s profile`} src={currentCat.image} />
+        <h3>{currentCat.name}'s Profile</h3>
+        <h3>Enjoys: {currentCat.enjoys}</h3>
         <NavLink to={`/catedit/${currentCat.id}`} className="nav-link">
             <Button>Edit Cat Profile</Button>
           </NavLink>
         <NavLink to="/catindex">
           <Button onClick={handleClickDelete}>Delete Cat Profile</Button>
         </NavLink>
-        </>
+        </div>
       )}
-      <h3>Cat Show Page</h3>
       </>
     )
 }
