@@ -1,52 +1,81 @@
-/* .header{
-  font-size: 50px;
-} */
-
-.header {
-  border: 1px solid rgb(41, 41, 41);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(66, 61, 61);
-  padding: 20px;
-  margin: 10px;
+.home-bg2{
+  background-image: url(https://img.freepik.com/free-vector/pet-logo-design-paw-vector-animal-shop-business_53876-136741.jpg?w=826&t=st=1702599044~exp=1702599644~hmac=b94f2cf660e8625c58651003ec7d6ddf19ee9e38840d8d3f63b2029e68cd1579);
+  background-size: contain;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+body{
+  background: linear-gradient(rgb(208, 90, 90), white);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-image: url();
+  background-repeat: no-repeat; "ENTER BACKGROUND CODE HERE"
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; */
+}
+.cards-index{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 24px;
+  grid-column-gap: 16px; */
+}
+.card-body{
+  background:linear-gradient(rgb(173, 172, 172), rgb(219, 85, 85));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 30px, 30px, 30px;
+}
+/* Name of each cat */
+.card-title-css{ 
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight:bolder ;
   text-align: center;
-  max-width: 250px;
-  display: inline-block;
 }
-
-.footer {
-  border: 1px solid rgb(41, 41, 41);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(66, 61, 61);
-  padding: 20px;
-  margin: 10px;
+/* Age of each cat */
+.card-subtitle-css{
+  font-weight:bolder;
   text-align: center;
-  max-width: 250px;
-  display: inline-block;
 }
-
-.notfound {
-  border: 1px solid rgb(41, 41, 41);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(66, 61, 61);
-  padding: 20px;
-  margin: 10px;
+.button.button.btn.btn-secondary{
+  display: flex;
+  justify-content: center;
+  font-weight:bolder;
+  background-color: rgb(62, 50, 112)
+}
+.img-css{
+  float: left;
+  width:  287px;
+  height: 250px;
+  object-fit: cover;
+}
+.footer-text{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+}
+.cats-profile{
+  margin: 50px;
+  padding: 50px;
+}
+.imgshow-css{
+  float: left;
+  width:  287px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 2rem;
+  margin-right: 25px;
+}
+.home{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight:bolder ;
   text-align: center;
-  max-width: 250px;
-  display: inline-block;
-}
-
-.card .card-image{
-  max-width: 60%;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-.card .card-title{
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  color: hsl(0, 0%, 21%);
-}
-.card .card-text{
-  font-family: Arial, Helvetica, sans-serif;
-  color: hsl(167, 100%, 31%)0000
+  font-size:xx-large
 }
