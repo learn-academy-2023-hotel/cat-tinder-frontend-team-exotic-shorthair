@@ -21,8 +21,9 @@ const CatNew = ({ createCat }) => {
     navigate("/catindex")
   }
 
+
   return (
-    <Form>
+    <Form className="form-input">
       <FormGroup>
         <Label for="name">Name</Label>
         <Input
